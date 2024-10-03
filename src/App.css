@@ -1,0 +1,158 @@
+/* App.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #2e2e2e;
+  color: #f0f0f0;
+}
+
+.container {
+  height: 100vh; /* Full viewport height */
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  flex-direction: column; /* Stack elements vertically */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5vh;
+  margin-top: 5vh;
+}
+
+label {
+  font-size: 10rem;
+}
+
+input {
+  padding: 10px;
+  font-size: 5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffffff; 
+  color: #000000; 
+  margin-bottom: 10px; 
+  width: 74rem;
+  height: 4vh;
+  transition: border-color 0.3s ease;
+}
+
+#initial-submit {
+  width: 74rem;
+  height: 4vh;
+}
+
+#second-name {
+  width: 15rem;
+  height: fit-content;
+  font-size: 14px;
+  margin-bottom: -4vh;
+}
+
+.after-wish {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  padding: 15px 30px;
+  font-size: 5rem;
+  width: fit-content;
+  height: fit-content;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+/* Styling for button container */
+.button-row {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+/* Smaller buttons styling */
+.small-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f44336; /* Red */
+  color: white;
+  cursor: pointer;
+}
+
+.small-button:hover {
+  background-color: #d32f2f;
+}
+
+/* Shake animation */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+}
+
+/* Error styling */
+.error-input {
+  border-color: #f44336; /* Red outline */
+  animation: shake 0.5s; /* Shake animation */
+  border-width: 5px;
+}
+
+/* Animation for the name shooting out and disappearing */
+@keyframes shoot-out {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    margin-top: 0;
+  }
+  50% {
+    transform: scale(2);
+    margin-top: -5rem;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+    margin-top: -10rem;
+  }
+}
+
+/* Styling for the animated name */
+.animated-name {
+  font-size: 5rem;
+  color: #ffffff;
+  position: absolute; /* Absolute positioning to allow random placement */
+  animation: shoot-out 3s ease forwards; /* Name animation: scale, move, and fade out */
+}
+
+/* Names container to overlay the entire site */
+.names-container {
+  position: fixed; /* Fixes the container to the viewport */
+  top: 0;
+  left: 0;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  z-index: 9999; /* Ensures it overlays everything */
+  pointer-events: none; /* Ensures it doesn't interfere with user interactions */
+}
