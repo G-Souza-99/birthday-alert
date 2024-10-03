@@ -3,12 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday</title>
+  <title>Happy Birthday Alert</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <button id="birthdayButton">Click me!</button>
+  <div class="form-container">
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name" placeholder="Your name here">
+    <button id="submitNameButton">Submit Name</button>
+  </div>
+
+  <!-- Initially hidden, will show after name submission -->
+  <button id="birthdayButton" style="display: none;">Get Birthday Wish!</button>
 
   <script src="script.js"></script>
 </body>
