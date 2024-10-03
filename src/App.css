@@ -150,3 +150,82 @@ input {
   z-index: 9999;
   pointer-events: none;
 }
+
+@media (max-width: 1024px) {
+  label {
+    font-size: 7rem;
+  }
+
+  input {
+    font-size: 4rem;
+    width: 60rem;
+  }
+
+  .button {
+    font-size: 4rem;
+    padding: 12px 25px;
+  }
+
+  .small-button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .animated-name {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  label {
+    font-size: 5rem;
+  }
+
+  input {
+    font-size: 3rem;
+    width: 50rem;
+  }
+
+  .button {
+    font-size: 3rem;
+    padding: 10px 20px;
+  }
+
+  .small-button {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
+  .animated-name {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container{
+    width: 80%;
+    padding: 0 10%;
+  }
+  label {
+    font-size: 3.5rem;
+  }
+
+  input {
+    font-size: 2.5rem;
+    width: 90%;
+  }
+
+  .button {
+    font-size: 2.5rem;
+    padding: 8px 15px;
+  }
+
+  .small-button {
+    font-size: 8px;
+    padding: 4px 8px;
+  }
+
+  .animated-name {
+    font-size: 2.5rem;
+  }
+}
