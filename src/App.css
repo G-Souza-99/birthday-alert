@@ -1,4 +1,3 @@
-/* App.css */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -7,12 +6,12 @@ body {
 }
 
 .container {
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   width: 100%;
   display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically */
-  flex-direction: column; /* Stack elements vertically */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .form {
@@ -66,7 +65,7 @@ input {
   height: fit-content;
   border: none;
   border-radius: 5px;
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
   color: white;
   cursor: pointer;
   margin-bottom: 10px;
@@ -76,19 +75,19 @@ input {
   background-color: #45a049;
 }
 
-/* Styling for button container */
+
 .button-row {
   display: flex;
-  gap: 10px; /* Space between buttons */
+  gap: 10px;
 }
 
-/* Smaller buttons styling */
+
 .small-button {
   padding: 8px 16px;
   font-size: 14px;
   border: none;
   border-radius: 5px;
-  background-color: #f44336; /* Red */
+  background-color: #f44336;
   color: white;
   cursor: pointer;
 }
@@ -97,7 +96,6 @@ input {
   background-color: #d32f2f;
 }
 
-/* Shake animation */
 @keyframes shake {
   0%, 100% {
     transform: translateX(0);
@@ -113,14 +111,12 @@ input {
   }
 }
 
-/* Error styling */
 .error-input {
-  border-color: #f44336; /* Red outline */
-  animation: shake 0.5s; /* Shake animation */
+  border-color: #f44336;
+  animation: shake 0.5s;
   border-width: 5px;
 }
 
-/* Animation for the name shooting out and disappearing */
 @keyframes shoot-out {
   0% {
     transform: scale(1);
@@ -138,21 +134,19 @@ input {
   }
 }
 
-/* Styling for the animated name */
 .animated-name {
   font-size: 5rem;
   color: #ffffff;
-  position: absolute; /* Absolute positioning to allow random placement */
-  animation: shoot-out 3s ease forwards; /* Name animation: scale, move, and fade out */
+  position: absolute; 
+  animation: shoot-out 3s ease forwards;
 }
 
-/* Names container to overlay the entire site */
 .names-container {
-  position: fixed; /* Fixes the container to the viewport */
+  position: fixed;
   top: 0;
   left: 0;
-  height: 100vh; /* Full viewport height */
-  width: 100vw; /* Full viewport width */
-  z-index: 9999; /* Ensures it overlays everything */
-  pointer-events: none; /* Ensures it doesn't interfere with user interactions */
+  height: 100vh;
+  width: 100vw;
+  z-index: 9999;
+  pointer-events: none;
 }

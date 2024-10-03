@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import confetti from 'canvas-confetti'; // Import the confetti library
+import confetti from 'canvas-confetti';
 import './App.css';
 
 interface NamePosition {
@@ -11,31 +11,29 @@ interface NamePosition {
 function App() {
   const [name, setName] = useState('');
   const [submitted, setSubmitted] = useState(false);
-  const [showNames, setShowNames] = useState<NamePosition[]>([]); // Store names with random positions
-  const [error, setError] = useState(false); // For triggering the shake and outline
-  const [intervals, setIntervals] = useState<number[]>([]); // Store confetti intervals
+  const [showNames, setShowNames] = useState<NamePosition[]>([]); 
+  const [error, setError] = useState(false);
+  const [intervals, setIntervals] = useState<number[]>([]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (name.trim()) {
       setSubmitted(true);
-      setError(false); // Reset error state if the name is valid
+      setError(false);
     } else {
-      setError(true); // Trigger shake and red outline
-      setTimeout(() => setError(false), 1000); // Remove error state after 1 second
+      setError(true);
+      setTimeout(() => setError(false), 1000);
     }
   };
 
   const handleBirthdayClick = () => {
-    // Generate random top and left positions for the name
-    const randomTop = Math.random() * 80; // Limit top position within 80% of viewport height
-    const randomLeft = Math.random() * 80; // Limit left position within 80% of viewport width
+    const randomTop = Math.random() * 80;
+    const randomLeft = Math.random() * 80;
 
-    // Add the name with its random position to the list of names
     setShowNames(prevNames => [...prevNames, { name, top: randomTop, left: randomLeft }]);
 
-    // Confetti effect
-    const duration = 60 * 1000; // 60 seconds
+
+    const duration = 60 * 1000;
     const animationEnd = Date.now() + duration;
     const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
@@ -52,7 +50,6 @@ function App() {
 
       const particleCount = 50 * (timeLeft / duration);
 
-      // Since particles fall down, start a bit higher than random
       confetti(
         Object.assign({}, defaults, {
           particleCount,
@@ -69,20 +66,18 @@ function App() {
 
     setIntervals(prev => [...prev, confettiInterval]);
 
-    // Remove each name after 3 seconds
     setTimeout(() => {
-      setShowNames(prevNames => prevNames.slice(1)); // Remove the first name after timeout
+      setShowNames(prevNames => prevNames.slice(1));
     }, 3000);
   };
 
   const handleReset = () => {
-    setName(''); // Clear the name
-    setSubmitted(false); // Go back to the initial state
-    setError(false); // Reset error state if resetting the form
+    setName(''); 
+    setSubmitted(false);
+    setError(false);
 
-    // Clear all active confetti intervals
     intervals.forEach(interval => clearInterval(interval));
-    setIntervals([]); // Reset intervals
+    setIntervals([]);
   };
 
   return (
@@ -96,7 +91,7 @@ function App() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Your name here"
-            className={error ? 'error-input' : ''} // Apply error styles if needed
+            className={error ? 'error-input' : ''}
           />
           <button className="button" type="submit">Submit Name</button>
         </form>
@@ -107,7 +102,7 @@ function App() {
               <h1
                 key={index}
                 className="animated-name"
-                style={{ top: `${item.top}%`, left: `${item.left}%` }} // Apply random positions
+                style={{ top: `${item.top}%`, left: `${item.left}%` }}
               >
                 {item.name}
               </h1>
